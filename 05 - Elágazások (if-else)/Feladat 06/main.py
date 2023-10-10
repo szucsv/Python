@@ -15,3 +15,4 @@ elif(number2 < number and number2 < number3):
 
 elif(number3 < number and number3 < number2):
     print(f"1.: {number3}")
+
