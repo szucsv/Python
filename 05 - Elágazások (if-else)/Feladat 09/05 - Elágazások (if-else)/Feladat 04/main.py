@@ -6,7 +6,8 @@ number2:int = int(input())
 
 if(number > number2):
     print(f"{number} a nagyobb szám")
-elif(number2 > number):
+
+elif(number < number2):
     print(f"{number2} a nagyobb szám")
 else:
     print(f"{number} és {number2}egyenlő")

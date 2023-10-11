@@ -9,10 +9,10 @@ numberz:int = int(input())
 
 if(numberx %numbery == 0 ):
     print(f"{numberx} osztható {numbery}-nal")
-
 elif(numberx %numberz == 0 ):
     print(f"{numberx} osztható {numberz}-vel")
-
-elif(numberx %numberz == 0 & numberx %numbery == 0  ):
+elif(numberx %numberz == 0 and numberx %numbery == 0  ):
     print(f"{numberx} osztható {numberz}-vel és {numbery}-nal is")
+else:
+    print(f"{numberx} nem osztható {numberz}-vel és {numbery}-nal ")
 
