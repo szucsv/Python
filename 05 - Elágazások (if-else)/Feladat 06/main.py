@@ -13,11 +13,12 @@ if(number > number2 and number > number3):
     else:
         print(f"1.: {number} 2.: {number3}  3.: {number2}")
 elif(number2 > number and number2 > number3):
-   if(number>number3):
-     print(f"1.: {number} 2.: {number2}  3.: {number3}")
-   else:
-        print(f"1.: {number} 2.: {number3}  3.: {number2}")
-elif(number3 < number and number3 < number2):
-    print(f"1.: {number3}")
-elif():
-
+    if(number>number3):
+     print(f"1.: {number2} 2.: {number}  3.: {number3}")
+    else:
+        print(f"1.: {number2} 2.: {number3}  3.: {number}")
+elif(number3 > number and number3 > number2):
+    if(number > number3):
+     print(f"1.: {number3} 2.: {number}  3.: {number3}")
+    else:
+     print(f"1.: {number3} 2.: {number2}  3.: {number}")
