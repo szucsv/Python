@@ -57,9 +57,6 @@ else:
     print(f"{error}")
 
 
-
-
-
 print ("Válasszon egy köretet: Rizs,Pároltzöldség,Gyümölcs,Sültkrumpli,Saláta,Kóla,Nem kérek: ", end="")
 side= input().lower()
 
@@ -86,8 +83,15 @@ if(error==None and (side=="rizs" or side=="r" or side=="paroltzoldseg" or side==
 else:
     print(f"{error}")
 
-print(f"A mai menü tartalma: {end}, {end2} , {end3}")
 
+if(end3=="Nem kért semmit" or error=="Nincs ilyen étel"):
+  print(f"A mai menü tartalma: {end}, {end2}")
+elif(end2=="Nem kért semmit" or error=="Nincs ilyen étel"):
+  print(f"A mai menü tartalma: {end}, {end3}")
+elif(end=="Nem kért semmit" or error=="Nincs ilyen étel"):
+  print(f"A mai menü tartalma: {end2}, {end3}")
+elif(error==None):
+  print(f"A mai menü tartalma: {end}, {end2} , {end3}")
 
 if(end=="Húsleves" and end2=="Sült csirkecomb" and end3=="Sültkrumpli" or end3=="Saláta"and(end2!="Pizza" or end2!="Rakottzöldség")):
     result="Vasárnapi menü"
