@@ -1,5 +1,3 @@
-startValue:int=None
-endValue:int=None
 
 print(" adjon meg egy kezdőértéket:" ,end="")
 startValue= int(input())
