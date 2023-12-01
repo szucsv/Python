@@ -10,7 +10,7 @@ product:int = 1
 for i in range(startValue,endValue + 1,1):
     if(i % 2 == 0):
         sum +=i
-    elif(i % 2 != 0):
+    else:
         product *=i
 print(sum)
 print(product)
