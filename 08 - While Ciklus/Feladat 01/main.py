@@ -13,7 +13,11 @@ while(number==None or(number<0 or number>9)):
     #megvizsgaljuk , hogy a beolvasott ertek string szamra alakithato-e
     #mindegy  hogy ez a szam int vagy float tipusu
     #idigit() -> bool valtozo ad vissza
-    if(data.replace("-","").isdigit()):
+    isNumber:bool = data.replace("-","").isdigit()
+    if(not isNumber):
+        number = int(data)
+    elif(isNumber and (number< 0 or number>9)):
+        print("Nem szamot adott meg")
         #ha az isdigit() fuggveny erteke igaz akkor szamot ir be a felhasznalo
         #amit mi biztos at tudunk szam tipusava alakitani
         number = int(data)
