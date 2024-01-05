@@ -16,7 +16,7 @@ while(number==None or(number<0 or number>9)):
     isNumber:bool = data.replace("-","").isdigit()
     if(not isNumber):
         number = int(data)
-    elif(isNumber and (number< 0 or number>9)):
+    if(isNumber and (number< 0 or number>9)):
         print("Nem szamot adott meg")
         #ha az isdigit() fuggveny erteke igaz akkor szamot ir be a felhasznalo
         #amit mi biztos at tudunk szam tipusava alakitani
@@ -25,7 +25,7 @@ while(number==None or(number<0 or number>9)):
 #az isdigit() fuggveny erteke hamis azaz a felhasznalo nem szamot irt be
 #igy a number valtozo erteke tovabbra is None marad, azaz a felhasznalo nem szamot irt be
 #a ciklust ismetelni kell
-    else:
+    elif(not isNumber):
         print("\nNem szamot adott meg!")
 
 
@@ -33,7 +33,7 @@ while(number==None or(number<0 or number>9)):
         time.sleep(3)
 
     #letoroljuk a kepernyot
-    os.system("cls")
+        os.system("cls")
 
     #egy vegtelen while ciklust irunk, mivel arra fogunk varni, hogy a felhasznalo
     # lenyomja a kert billentyut (ENTER)
