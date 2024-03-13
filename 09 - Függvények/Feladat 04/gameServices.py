@@ -1,22 +1,13 @@
+from consolServices import getIntNumber
 def game(randomNum) -> int:
     Guess:int=0
     num:int=None
 
     while(num==None or (num != randomNum)):
-            print("kérem a szamot: ")
-            data=input()
-            isNumber:bool = data.replace("-","",1).replace(",","",1).replace(".","",1).isdigit()
-
-            if(isNumber ):
-                num = float(data.replace(",","."))
-
-
-            elif(not isNumber):
-                print("\nNem szamot adott meg!")
-
-            Guess+=1
-            if(isNumber and num > randomNum):
+        num = getIntNumber("kerem a szamot")
+        Guess+=1
+        if(num > randomNum):
                 print("kisebb szam")
-            else:
+        else:
                 print("nagyobb szam")
     return Guess 

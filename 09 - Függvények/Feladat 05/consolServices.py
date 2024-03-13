@@ -23,8 +23,8 @@ def getIntNumber() -> int:
                 os.system("cls")
     return number 
 
-def getFloatNumber() -> float:
-    number:float=None
+def getName(prompt:str) -> str:
+    name=None
     data:str=""
 
     while (name == None or len(name) <2 or not name.isalpha()):
@@ -39,6 +39,7 @@ def getFloatNumber() -> float:
     if(not areAllLettersInString):
         print("A nevben csak betuk lehetnek")
     os.system("cls")
+    return name
 
 def maxButNoMin(prompt:str, max:int) -> int:
 
