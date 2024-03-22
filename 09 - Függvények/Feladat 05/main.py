@@ -1,7 +1,8 @@
 from consolServices import *
 from feleadatServices import*
-name=getName("kerem a nevet")
-salary= workHours()
-hours=inBetween(0,77, "kerem a dolgozott orakat")
+
+name:str=getName("kerem a nevet")
+hours:int=inBetween(0,77, "kerem a dolgozott orakat")
+salary:int=workHours(hours)
 
 print(f"Ön{name} {hours} orat dolgozott ezert {salary} ft fizetest kap")
