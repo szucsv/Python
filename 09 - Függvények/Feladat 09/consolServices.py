@@ -4,10 +4,8 @@ import time
 def getIntNumber(prompt:str) -> int:
 
     number:int=None
-
-
-    number:float = None
     data:str=""
+    
     while(number==None ):
         print(prompt,end="")
         data=input()
