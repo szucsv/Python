@@ -1,57 +1,41 @@
-from city import City
+from settlement import Settlement
 from fileService import *
+from settlementService import *
 from typing import *
-from cityServices import *
 
-cities: List[City] = getStudentFromFile("adatok.txt")
+fileWriteSucceeded: bool = False
 
-printCitiesToConsole(cities)
+# 1
+print("Feladat 1:")
+settlements:List[Settlement] = getSettlementsFromFile("./adatok.txt")
+writeSettlementsToConsole(settlements)
 
-cityWithCountyRights: List[City] = getCityWithCountyRights(cities)
+# 2
+print("\nFeladat 2:")
+settlementsByCountyType:List[Settlement] = getSettlementsByCountyType(settlements, "megyesz�khely megyei jog� v�ros")
+fileWriteSucceeded = writeSettlementsToFile("./megyejoguSettlement.txt", settlementsByCountyType)
+printFileResultToConsole("megyejoguSettlement.txt", fileWriteSucceeded)
 
-ifCountryFileWriteSuccess: bool = writeCityWithCountryRightsToFile("megyejoguvarosok.txt", cityWithCountyRights)
+# 3
+print("\nFeladat 3:")
+settlementsWherePopulationsIsBetween:List[Settlement] = getSettlementsWherePopulationsIsBetween(settlements, 50000, 100000)
+fileWriteSucceeded = writeSettlementsToFile("./nepesseg.txt", settlementsWherePopulationsIsBetween)
+printFileResultToConsole("nepesseg.txt", fileWriteSucceeded)
 
-if(ifCountryFileWriteSuccess):
-    print("\nmegyejoguvarosok.txt állomány mentése sikeres volt!")
-else:
-    print("\nmegyejoguvarosok.txt állomány mentése sikertelen volt!")
+# 4
+print("\nFeladat 4:")
+settlementWithAreOver:List[Settlement] = getSettlementWithAreOver(200, settlements)
+fileWriteSucceeded = writeSettlementsToFile("./nagyteruletek.txt", settlementWithAreOver)
+printFileResultToConsole("nagyteruletek.txt", fileWriteSucceeded)
 
-population: List[City] = getPopulationBetween(cities)
+# 5
+print("\nFeladat 5:")
+settlementsOfCounty:List[Settlement] = getSettlementsOfCounty("B�k�s", settlements)
+fileWriteSucceeded = writeSettlementsToFile("./bekes.txt", settlementsOfCounty)
+printFileResultToConsole("bekes.txt", fileWriteSucceeded)
 
-ifPopulationFileWriteSuccess: bool = writePopulationToFile("nepesseg.txt", population)
-
-if(ifPopulationFileWriteSuccess):
-    print("\nnepesseg.txt állomány mentése sikeres volt!")
-else:
-    print("\nnepesseg.txt állomány mentése sikertelen volt!")
-
-bigAreas: List[City] = getBigAreas(cities)
-
-ifBigAreasFileWriteSuccess: bool = writeBigAreasToFile("nagyteruletek.txt", bigAreas)
-
-if(ifPopulationFileWriteSuccess):
-    print("\nnagyteruletek.txt állomány mentése sikeres volt!")
-else:
-    print("\nnagyteruletek.txt állomány mentése sikertelen volt!")
-
-citiesInBekes: List[City] = getCitiesInBekes(cities)
-
-ifCitiesInBekesFileWriteSuccess: bool = writeCitiesInBekesToFile("bekes.txt", citiesInBekes)
-
-if(ifCitiesInBekesFileWriteSuccess):
-    print("\nbekes.txt állomány mentése sikeres volt!")
-else:
-    print("\nbekes.txt állomány mentése sikertelen volt!")
-
-countryAndAreas: List[City] = getCountryAndAreas(cities)
-
-ifCountryAndAreasFileWriteSuccess: bool = writeCountryAndAreasToFile("megyeteruletek.txt", countryAndAreas)
-
-if(ifCountryAndAreasFileWriteSuccess):
-    print("\nmegyeteruletek.txt állomány mentése sikeres volt!")
-else:
-    print("\nmegyeteruletek.txt állomány mentése sikertelen volt!")
-    #6
-    CountryNamesWithAreaSize:Dict[str,float]=getCountryNamesWithAreaSize(settlements)
-    ifCountryFileWriteSuccess=writeSettlementsB
-    printCitiesToConsole("megyeteruletek.txt")
+# 6
+print("\nFeladat 6:")
+countyNamesWithAreaSize: Dict[str, float] = getCountyNamesWithAreaSize(settlements)
+fileWriteSucceeded = writeSettlementsByAreaSize("./megyeterületek.txt", countyNamesWithAreaSize)
+printFileResultToConsole("megyeterületek.txt", fileWriteSucceeded)

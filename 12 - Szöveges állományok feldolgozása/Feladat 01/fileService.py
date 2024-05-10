@@ -1,61 +1,62 @@
+import os
 from typing import *
 from io import open
-import os
 from student import Student
 
-fileName:str="adatok.txt"
+def getFileFullPath(fileName:str) -> str:
+    basePath: str = os.path.dirname(os.path.abspath(__file__))
+    fullPath: str = os.path.join(basePath, fileName)
 
-def getFileFullPath(fileName:str )-> str:
+    return fullPath
 
-    basepath: str = os.path.dirname(os.path.abspath(__file__))
-    fullpath: str = os.path.join(basepath,fileName)
+def getStutentsFromFile(fileName:str) -> List[Student]:
 
-    return fullpath
-
-def getStudentFromFile(fileName:str)->List[Student]:
-    students:List[Student]=[]
-    student:Student=None
-    oneList:str=None
+    students: List[Student] = []
+    student: Student = None
+    oneLine:str = None
+    data:List[str] = []
 
     try:
-        here: str = os.path.dirname(os.path.abspath(__file__))
-        path: str = os.path.join(here,fileName)
-
-        with open(path, encoding='utf-8', mode="r") as file:
+        fullPath: str =getFileFullPath(fileName)
+        
+        with open(fullPath, encoding='utf-8', mode="r") as file:
             for line in file:
                 oneLine = line.strip()
+                #oneLine = "Antalfai Martin	3,53"
+                
+                data = oneLine.split("\t")
+                # data[0] = "Antalfai Martin"
+                # data[1] = "3,53"
 
-                data=oneLine.split("\t")
-                #data[0]="Antalfalvi Martin"
-                #data[1]="3,53"
-
-                if(len(data[0])==""):
+                if(data[0] == ''):
                     continue
 
-                student=Student()
-                student.name=data[0]
-                student.avarage=float(data[1].replace(",","."))
+                student = Student()
+                student.name = data[0]
+                student.avarage = float(data[1].replace(",", "."))
+                #student = { name = "Antalfai Martin", avarage = 3.53 }
 
                 students.append(student)
-
+            
     except FileNotFoundError as ex:
-        print(f"{ex.filename} nem talalhato!")
+        print(f"{ex.filename} nem található!")
 
     return students
 
-def  writeStudentsToFile(filename:str,students:List[Student])->bool:
-     try:
-        fullpath:str=getFileFullPath(filename)
+def wrtiteStudentsToFile(fileName: str, students: List[Student]) -> bool:
+    try:
+        fullPath: str = getFileFullPath(fileName)
+        index: int = 1
 
-        with open (fullpath,encoding='utf-8',mode="a") as file:
-            for (student,index) in students:
+        with open (fullPath, encoding='utf-8', mode="a") as file:
+            for student in students:
                 file.write(f"{str(student)}")
-                if(len(students)-1 !=index):
+                
+                if(len(students) != index):
                     file.write("\n")
-
-                    index+=1
-
+                
+                index += 1
 
         return True
-     except FileNotFoundError as ex:
+    except FileNotFoundError as ex:
         return False
