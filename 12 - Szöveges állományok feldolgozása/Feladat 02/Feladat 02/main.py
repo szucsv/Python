@@ -51,3 +51,7 @@ if(ifCountryAndAreasFileWriteSuccess):
     print("\nmegyeteruletek.txt állomány mentése sikeres volt!")
 else:
     print("\nmegyeteruletek.txt állomány mentése sikertelen volt!")
+    #6
+    CountryNamesWithAreaSize:Dict[str,float]=getCountryNamesWithAreaSize(settlements)
+    ifCountryFileWriteSuccess=writeSettlementsB
+    printCitiesToConsole("megyeteruletek.txt")

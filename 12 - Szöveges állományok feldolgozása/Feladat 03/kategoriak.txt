@@ -1,0 +1,47 @@
+horror:
+	- Hasznos holmik:
+informatika:
+	- Refactoring - Kódjavítás újratervezéssel:
+	- Design Patterns: Elements of Reusable Object-Oriented Software:
+	- Programtervezési minták - Újrahasznosítható elemek objektumközpontú programokhoz:
+	- Domain-Specific Languages:
+thriller:
+	- Dolores:
+mesekönyv:
+	- A nagyhatalmú sündisznócska:
+	- A gyevi törvény - Tanulságos mesék, mondák Mátyás királyról:
+	- A gyevi törvény - Tanulságos mesék, mondák Mátyás királyról:
+szépirodalom:
+	- A Hold tragédiája:
+	- A kõszívû ember fiai:
+	- Aranykoporsó:
+sci-fi:
+	- Fagyos éden:
+	- Álomcsapda:
+krimi:
+	- A váratlan vendég:
+	- A vád tanúja:
+	- Tíz kicsi néger:
+	- Éjféltájt:
+	- És eljõ a halál...:
+	- Vészbejárat:
+	- Tûzvarázs:
+	- Ébredj velem!:
+	- A tûzgyújtó:
+történelem:
+	- 1848 - a magyar szabadságharcz 1848-49-ben:
+	- Napóleon:
+	- Napóleon:
+természettudomány:
+	- Az elsõ édenkert:
+	- A biológia rövid története:
+	- Az élõ bolygó - a föld mai arculata:
+	- Az élet erõpróbái:
+	- Az óceán:
+	- Az univerzum:
+	- Az óceán:
+	- Az óceán:
+	- Az óceán:
+	- Az univerzum:
+	- A Föld enciklopédiája:
+	- A Föld enciklopédiája:

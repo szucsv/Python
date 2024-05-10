@@ -138,3 +138,15 @@ def writeCountryAndAreasToFile(fileName: str, countryAndAreas: List[City]) -> bo
         print(f"{fileName} nem található!")
 
         return False
+def writeSettlementbyAreaSize(fileName:str,countryNamesWithAreaSize:Dict[str,float])->Dict[str,float]:
+        try:
+            filefullPath:str=getFileFullPath(fileName)
+            with open(filefullPath,encoding='utf-8',mode="w+")as file:
+                for country,areaSize in countryNamesWithAreaSize.items():
+                    file.write(f"{country}:{areaSize}m2\n")
+            
+            return True
+        except FileNotFoundError as ex:
+            print(f"{ex.fileName}nem talalhato!")
+            return False
+

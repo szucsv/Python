@@ -48,3 +48,28 @@ def getCountryAndAreas(cities: List[City]) -> List[City]:
         countryAndAreas.append(f"{city.county}: {city.zone}")
 
     return countryAndAreas
+
+def getCountyNames(settlements:List[Settlement])->Set[str]:
+    countries:Set[str]=set()
+
+    for settlement in settlements:
+        countries.add(settlement.country)
+        return countries
+def getCountryNamesWithAreaSize(settlements:List[Settlement])->Dict[str,float]:
+    countryNameswithAreaSize:Dict[str,float]={}
+
+    countries:Set[str]=getCountyNames(settlements)
+    for country in countries:
+        countryNamesWithAreaSize[country]= 0
+    for settlement in settlements:
+        countryNameswithAreaSize[settlement.country]+=settlement.area
+
+    return countryNameswithAreaSize
+
+def printFileResultToConsole(fileName:str,fileWriteSucceeeded:bool)->None:
+    if(fileWriteSucceeeded):
+        print(f"{fileName}allomany letrehozasa")
+    else:
+        print(f"{fileName}allomany nem lett letrehova")
+
+            

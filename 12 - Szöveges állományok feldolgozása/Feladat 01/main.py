@@ -34,3 +34,5 @@ grades: Dict[str, int] = getGradesFromStrudents(students)
 print("\nA diákok értékhatárai")
 studentCategories:Dict[str,int]=getStudentCategoriesCount(students)
 printStudentCategoriesToConsole(studentCategories)
+#6
+countryNam

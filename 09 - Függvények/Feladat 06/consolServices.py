@@ -137,6 +137,7 @@ def oneSpecificLetter(prompt:str, goodLetters:list[str]) -> str:
             print("\nKérem csak egy megfelelő betűt adjon meg!")
             time.sleep(2)
             os.system("cls")
+<<<<<<< HEAD
 def getIntNumberBetweenInterval(promt: str, min: int, max: int) -> int:
     number: int = None
     data:str = ""
@@ -159,3 +160,5 @@ def getIntNumberBetweenInterval(promt: str, min: int, max: int) -> int:
             os.system("cls")
 
     return number
+=======
+>>>>>>> 86a86b9c5e5f5252d4c809d32334646279b281b4
