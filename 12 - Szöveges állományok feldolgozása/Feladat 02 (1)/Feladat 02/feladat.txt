@@ -1,0 +1,15 @@
+A magyarvarosok.txt állományban az adatok a következő módón vannak tárolva:
+Nev (város neve),
+Város típusa, 
+Megye név,
+Járas,
+Kistérség,
+Népesség,
+Terület
+
+- Írjuk ki a képernyőre az össz adatot
+- Keressük ki a megyeszékhely megyei jogú városokat és mentsük el a megyejoguvarosok.txt állományba
+- Az nepesseg.txt állományba mentsük el azokat a településeket és a hozzájuk tartozó adatokat, ahol a népesség 50.000 és 100.000 közt van
+- Keressük ki azokat a településeket, melyek területei meghaladják az 200-at  és a  nagyteruletek.txt állományba mentsük el.
+- Keressük ki Békés megye össz települését és a bekes.txt állományba mentsük el.
+- megyeterületek.txt állományba mentsük el a megye nevét és területének nagyságát.
