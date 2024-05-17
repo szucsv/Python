@@ -4,7 +4,8 @@ import os
 from absence import Absence
 
 def getFileFullPath(fileName: str) -> str:
-    basePath: str = os.path.dirname(os.path.abspath)
+    basePath: str = os.path.dirname(os.path.abspath(__file__))
+    fullPath:str= os.path.join(basePath,fileName)
     return os.path.join(basePath, fileName)
 
 def getAbsencesFromFile(fileName: str) -> List[Absence]:
@@ -17,6 +18,9 @@ def getAbsencesFromFile(fileName: str) -> List[Absence]:
         fullPath: str = getFileFullPath(fileName)
 
         with open (fullPath, encoding="ansi", mode="r") as file:
+            #kihagyja az elso sort(fejlec) a next ha tobb sor van akkor tobbszor kell leirni
+            #next(file)
+            #megszamozza a sorokat az enumerate
             for index, line in enumerate(file):
                 if(index == 0):
                     continue
@@ -33,9 +37,9 @@ def getAbsencesFromFile(fileName: str) -> List[Absence]:
                 absences.append(absence)
 
     except FileNotFoundError:
-        print(f"{fileName} nem található!")
+        print(f"{fileName} nem talalhato!")
     except Exception as ex:
-        print("Hiba történt: ", ex)
+        print("Hiba: ", ex)
 
     return absences
 
