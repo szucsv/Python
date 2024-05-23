@@ -1,6 +1,9 @@
-from io import open
+
 from typing import *
 import os
 from absence import Absence
 
-def allMissedClasses(filename)
+def writeAbsenceToConsole(absence:List[Absence]) -> None:
+    for Absence in absence:
+        print(str(Absence))
+
